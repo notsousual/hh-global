@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+
+@import "components/common";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 600px));
+  justify-content: center;
+  grid-gap: 20px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  &__input {
+    padding: $padding-small;
+    border: 1px solid $border-color-light;
+    border-radius: 4px;
+    font-size: $font-size-small;
+    outline: none;
+    margin-right: 5px;
+  }
+}
+.add-product,
+.add-job {
+  background-color: $color-white;
+  padding: $unified-space;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow-small;
+  display: flex;
+  gap: $gap-large;
+
+  button {
+    padding: 10px;
+
+    color: $color-white;
+    font-size: $font-size-small;
+    font-weight: $font-weight-bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background: none;
+    }
+  }
+
+  input {
+    transition: 0.3s;
+    outline: none;
+
+    padding: $padding-small;
+    border: 1px solid $border-color-light;
+    border-radius: 4px;
+    font-size: $font-size-small;
+    &:required:invalid:not(:placeholder-shown) {
+      border: 1px solid rgb(252, 40, 82);
+      background-color: #fff9fa;
+    }
+  }
+
+  &__form {
+    display: flex;
+
+    flex-wrap: wrap;
+    gap: $gap-large;
+  }
+}
+
+.add-product {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  &__header {
+    font-size: $font-size-small;
+    font-weight: $font-weight-bold;
+    margin: $margin-small;
+  }
+
+  &__form {
+    flex-direction: column;
+
+    &__block {
+      display: flex;
+      flex-wrap: wrap;
+      gap: $gap-small;
+    }
+
+    &__block__name {
+      flex-grow: 2;
+    }
+
+    &__block__price {
+      flex-grow: 1;
+    }
+  }
+
+  button {
+    background: $color-button-primary;
+    border: 2px solid $color-button-primary;
+    color: $color-white;
+    &:hover {
+      color: $color-button-primary;
+      border: 2px solid $color-button-primary;
+    }
+  }
+}
+
+.add-job {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: $gap-large;
+  margin-bottom: 40px;
+
+  &__header {
+    font-size: $font-size-medium;
+    font-weight: $font-weight-bold;
+    margin: 0;
+    border: none;
+  }
+  &__form {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  input {
+    width: 200px;
+  }
+  button {
+    background: $color-button-secondary;
+    border: 2px solid $color-button-secondary;
+    color: $color-white;
+
+    &:hover {
+      color: $color-button-secondary;
+      border: 2px solid $color-button-secondary;
+    }
+  }
+}

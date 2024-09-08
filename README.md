@@ -1,6 +1,16 @@
-# Getting Started with Create React App
+# Job and Product Management App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a responsive job and product management application built with **React** and **SCSS**, allowing users to add, search, and delete jobs and products. The application includes dynamic tax and margin calculations.
+
+## Features
+
+- **Add/Remove Jobs**: Create new jobs with the option to add an extra margin. Jobs can be deleted dynamically.
+- **Add/Remove Products**: Add products to jobs, specifying price and tax-free status. Products can be removed, updating the job's price accordingly.
+- **Search Functionality**: Filter jobs and products via a search bar, updating results as you type.
+- **Tax and Margin Calculations**: Automatically calculate sales tax (7%) and apply margin, with the option for an additional margin.
+- **Mock Data**: The app includes mock jobs for testing purposes.
+- **Responsive Design**: The app is fully responsive and optimized for mobile devices.
+- **Components**: Custom toggle check box and Delete buttton are implemented
 
 ## Available Scripts
 
@@ -13,11 +23,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `yarn build`
 
@@ -45,26 +50,6 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Getting Started with Create React App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

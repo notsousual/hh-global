@@ -1,0 +1,29 @@
+$btn-bg-color: rgb(90, 90, 90);
+$btn-hover-color: rgb(32, 32, 32);
+$btn-color: white;
+
+@import "common";
+
+.delete-btn {
+  background-color: $btn-bg-color;
+  font-size: $font-size-small;
+  color: $btn-color;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-btn__svg {
+  fill: $btn-color;
+}
+
+.delete-btn:hover {
+  background-color: $btn-hover-color;
+}

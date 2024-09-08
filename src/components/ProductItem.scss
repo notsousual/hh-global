@@ -1,0 +1,27 @@
+@import "common";
+.product-item {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-small;
+  background-color: $color-grey;
+  border-radius: $border-radius;
+  padding: $unified-space;
+
+  &__header {
+    font-size: $font-size-medium;
+    margin: $margin-small;
+    font-weight: $font-weight-bold;
+  }
+
+  &__prices p {
+    font-size: $font-size-small;
+    margin: $margin-small;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: $gap-small;
+  }
+}
