@@ -1,4 +1,6 @@
-# Job and Product Management App
+# 🚨 🕸️👩‍💻 Deployed project ->  [Click here or copy the link https://jobsproductsapp.netlify.app/ (https://jobsproductsapp.netlify.app/)]
+## 🚨 ℹ️ [Task assignment instructions (click here) (https://docs.google.com/document/d/1gJL1PK20On0_uYyYY_jObo6BNUi9nd7P/edit?usp=sharing&ouid=114959948652651566038&rtpof=true&sd=true)]
+# Job and Product Management App / Deployment instructions above
 
 This is a responsive job and product management application built with **React** and **SCSS**, allowing users to add, search, and delete jobs and products. The application includes dynamic tax and margin calculations.
 
@@ -10,13 +12,14 @@ This is a responsive job and product management application built with **React**
 - **Tax and Margin Calculations**: Automatically calculate sales tax (7%) and apply margin, with the option for an additional margin.
 - **Mock Data**: The app includes mock jobs for testing purposes.
 - **Responsive Design**: The app is fully responsive and optimized for mobile devices.
-- **Components**: Custom toggle check box and Delete buttton are implemented
+- **Components**: Custom toggle check box and Delete button are implemented
 
-## Available Scripts
 
-In the project directory, you can run:
+## Available Scripts / deploying locally
 
-### `yarn start`
+In the project directory in the terminal, you can run:
+
+### `yarn start` to run the project locally
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
