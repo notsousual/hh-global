@@ -2,7 +2,7 @@
 click or copy the link https://jobsproductsapp.netlify.app/
 ## 🚨 ℹ️ Task assignment instructions
 https://docs.google.com/document/d/1gJL1PK20On0_uYyYY_jObo6BNUi9nd7P/edit?usp=sharing&ouid=114959948652651566038&rtpof=true&sd=true
-# Job and Product Management App / Deployment instructions above
+# Job and Product Management App / Deployment instructions below
 
 This is a responsive job and product management application built with **React** and **SCSS**, allowing users to add, search, and delete jobs and products. The application includes dynamic tax and margin calculations.
 
