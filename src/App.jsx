@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import "./App.scss";
 import { Toggle } from "./components/Toggle";
 import { mockJobs } from "./helpers/mockJobs";
@@ -20,7 +20,7 @@ const App = () => {
       job.name.toLowerCase().includes(searchTerm)
     );
     setFilteredJobs(filtered);
-  }, [jobs]);
+  }, [jobs, searchTerm]);
 
   const handleJobSubmit = (e) => {
     e.preventDefault();
@@ -40,7 +40,7 @@ const App = () => {
       );
       setFilteredJobs(filteredJobs);
     },
-    [jobs, searchTerm]
+    [jobs]
   );
 
   return (
