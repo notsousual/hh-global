@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback } from "react";
 import "./App.scss";
 import { Toggle } from "./components/Toggle";
 import { mockJobs } from "./helpers/mockJobs";
@@ -7,7 +7,6 @@ import { Job } from "./components/Job";
 
 const App = () => {
   const [jobs, setJobs] = useState(mockJobs);
-  const [filteredJobs, setFilteredJobs] = useState(mockJobs);
   const [searchTerm, setSearchTerm] = useState("");
   const [newJob, setNewJob] = useState({
     name: "",
@@ -15,12 +14,15 @@ const App = () => {
     items: [],
   });
 
-  useEffect(() => {
-    const filtered = jobs.filter((job) =>
-      job.name.toLowerCase().includes(searchTerm)
+  const filteredJobs = jobs.filter((job) => {
+    const lowerSearchTerm = searchTerm.toLowerCase();
+    return (
+      job.name.toLowerCase().includes(lowerSearchTerm) ||
+      job.items.some((item) =>
+        item.name.toLowerCase().includes(lowerSearchTerm)
+      )
     );
-    setFilteredJobs(filtered);
-  }, [jobs, searchTerm]);
+  });
 
   const handleJobSubmit = (e) => {
     e.preventDefault();
@@ -28,20 +30,23 @@ const App = () => {
     setNewJob({ name: "", extraMargin: false, items: [] });
   };
 
-  const handleInputChange = useCallback(
-    (e) => {
-      const value = e.target.value.toLowerCase().trim(); // Makes search more effective by lower-casing and avoiding excessive filtering by skipping white spaces
-      setSearchTerm(value);
+  const handleInputChange = useCallback((e) => {
+    setSearchTerm(e.target.value);
+  }, []);
 
-      const filteredJobs = jobs.filter(
-        (job) =>
-          job.name.toLowerCase().trim().includes(value) ||
-          job.items.some((item) => item.name.toLowerCase().includes(value))
-      );
-      setFilteredJobs(filteredJobs);
-    },
-    [jobs]
-  );
+  const handleDeleteJob = useCallback((jobId) => {
+    setJobs((prevJobs) => prevJobs.filter((job) => job.id !== jobId));
+  }, []);
+
+  const handleDeleteItem = useCallback((jobId, itemId) => {
+    setJobs((prevJobs) =>
+      prevJobs.map((job) =>
+        job.id === jobId
+          ? { ...job, items: job.items.filter((item) => item.id !== itemId) }
+          : job
+      )
+    );
+  }, []);
 
   return (
     <>
@@ -59,7 +64,6 @@ const App = () => {
           <Toggle
             text={"Extra margin"}
             checked={newJob.extraMargin}
-            value={searchTerm}
             onChange={(e) =>
               setNewJob({ ...newJob, extraMargin: e.target.checked })
             }
@@ -71,6 +75,7 @@ const App = () => {
           <input
             placeholder="Search jobs and products"
             className="search__input"
+            value={searchTerm}
             onChange={handleInputChange}
           />
 
@@ -91,7 +96,8 @@ const App = () => {
           <Job
             key={job.id}
             jobContent={job}
-            onDeleteJob={() => setJobs(jobs.filter((j) => j.id !== job.id))}
+            onDeleteJob={() => handleDeleteJob(job.id)}
+            onDeleteItem={(itemId) => handleDeleteItem(job.id, itemId)}
           />
         ))}
       </div>
